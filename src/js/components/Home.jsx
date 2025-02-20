@@ -6,10 +6,8 @@ import TodoList from "./TodoList";
 const Home = () => {
 
 	return (
-		<div className="container mx-auto">
-			<header>
-				<h1>Todo List :)</h1>
-			</header>
+		<div className="container mt-5">
+				<h1 className= "mb-4 text-primary">Lista de Tareas =)</h1>
 			<TodoList/>
 		</div>
 	);

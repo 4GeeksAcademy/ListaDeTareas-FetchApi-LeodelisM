@@ -3,32 +3,43 @@ import Input from "./FormularioTarea";
 import ListaDeTareas from "./ListaDeTareas";
 
 const TodoList = () => {
-
+    // Array para el manejo de las tareas
     const [lista, setLista] = useState([]);
+    // String vacio para manejar el texto del input (en este caso texto = escribir/limpiar/borrar tarea = "description" como nombre)
     const [description, setDescription] = useState("");
     
 
-    const handleChange = (evt) => {
-        setDescription(evt.target.value);
+    // Cambio de estado con el evento
+    const handleChange = (e) => {
+        setDescription(e.target.value);
     };
 
-    const onSubmitForm = (evt) => {
-        evt.preventDefault();
+    // Agregar Tarea
+    const onSubmitForm = (e) => {
+        e.preventDefault();
         setLista([...lista, description]);
         setDescription("");
 
     };
 
-    const deleteDescription = (idx) => {
+    // Eliminar tarea
+    const deleteDescription = (id) => {
         let newDescription = [...lista];
-        newDescription.splice(idx, 1);
-        setLista(newDescription);
+        newDescription.splice(id, 1);
+        setLista(newDescription)
+
     };
 
     return (
         <div>
-            <Input capturarInput={handleChange} valorInput={description} onSubmit={onSubmitForm} />
-            <ListaDeTareas lista={lista} delete={deleteDescription} />
+
+            <Input capturarInput={handleChange} 
+            valorInput={description} 
+            onSubmit={onSubmitForm} />
+
+            <ListaDeTareas lista={lista} 
+            delete={deleteDescription} />
+            
         </div>
     );
 };
