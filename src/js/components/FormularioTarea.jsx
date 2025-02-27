@@ -1,6 +1,5 @@
 import React from "react";
 
-
 //Esta función se ejecuta cada vez que se escribe en el input
 
 const Formulario = (props) => {
@@ -10,7 +9,7 @@ const Formulario = (props) => {
             <div className="card-body m-auto">
                 <h2 className="card-title">Mi nueva tarea</h2>
                 <form onSubmit={props.escribirTarea}>
-                    <div className="mb-3">
+                    <div className="input-group mb-3">
                         <input
                             type="text"
                             className="form-control"
@@ -18,13 +17,13 @@ const Formulario = (props) => {
                             onChange={props.cambio}
                             placeholder="Ej: Estudiar React"
                         />
-                    </div>
                     <button
                         type="submit"
                         className="btn btn-primary"
                     >
                         Añadir Tarea
                     </button>
+                    </div>
                 </form>
             </div>
         </div>
